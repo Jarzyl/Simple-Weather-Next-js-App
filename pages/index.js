@@ -8,6 +8,7 @@ export default function Home() {
   const [city, setCity] = useState('');
   const [weather, setWeather] = useState({});
   const [error, setError] = useState('');
+  const [showMessage, setShowMessage] = useState(true);
   const inputRef = useRef(null);
 
   const API_URL = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${process.env.NEXT_PUBLIC_WEATHER_KEY}`;
@@ -22,6 +23,7 @@ export default function Home() {
     // if everything is valid, fetch weather data
     fetchWeather();
     setError(''); // clear error message
+    setShowMessage(false); // hide welcome message
   };
 
   const fetchWeather = () => {
@@ -67,6 +69,12 @@ export default function Home() {
         onClick={handleSubmit}><BsSearch size={20} className='search-icon'/></button>
         </form>
       </div>
+
+      {showMessage && (
+          <p className="bg-black/40 m-6 relative p-1 pb-4 rounded-lg text-2xl text-center text-emerald-300 px-5 z-10 md:text-5xl" >
+            Welcome in my weather app! <br /> Enter a city to check the weather!
+          </p>
+        )}
   
       {/* Weather data display */}
   
