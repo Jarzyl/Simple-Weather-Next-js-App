@@ -1,0 +1,27 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Background image stays responsive */
+
+body {
+    margin: 0;
+    padding: 0;
+    background-image: url('../public/background.jpg');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+}
+
+@media (max-width: 1100px) {
+    body {
+      background-size: cover;
+  }
+}
+
+@media (max-width: 390px) {
+  .search-icon {
+    display: none;
+  }
+}
