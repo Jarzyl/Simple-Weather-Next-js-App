@@ -24,16 +24,4 @@ describe('Weather search', () => {
     const errorMessage = screen.getByText('Please enter a city name.');
     expect(errorMessage).toBeInTheDocument();
   });
-
-//   test('displays weather data after valid city is submitted', async () => {
-//     render(<Home />);
-//     const searchInput = screen.getByPlaceholderText('Search city');
-//     fireEvent.change(searchInput, { target: { value: 'New York' } });
-//     const submitButton = screen.getByRole('button');
-//     fireEvent.click(submitButton);
-//     // You may want to wait for the weather data to be fetched before making assertions
-//     // Use waitFor to wait for the weather data to appear on the screen
-//     const weatherData = await screen.findByText('Weather in New York');
-//     expect(weatherData).toBeInTheDocument();
-//   });
 });
